@@ -1,6 +1,6 @@
 
 
-from app.Part1 import hash_function_division
+from app.Part1 import hash_function_division, hash_function_multiplication
 
 
 def hash_liner_study(key, i, table_size):
@@ -12,7 +12,7 @@ def hash_quadratic_study(key, i, table_size):
 
 
 def hash_double_study(key, i, table_size):
-    return (hash_function_division(key, table_size) + i * hash_function_division(key, table_size - 1)) % table_size
+    return (hash_function_division(key, table_size) + i * hash_function_multiplication(key, table_size)) % table_size
 
 
 def hash_insert_open_addressing(hash_table, key, value, study_method=hash_liner_study):

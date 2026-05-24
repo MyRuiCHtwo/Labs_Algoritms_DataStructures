@@ -1,5 +1,5 @@
-from app.Part1 import Node, chained_hash_delete, chained_hash_insert, chained_hash_search, chained_hash_show
-from app.Part2 import hash_delete_open_addressing, hash_insert_open_addressing, hash_search_open_addressing, hash_show_open_addressing
+from app.Part1 import chained_hash_delete, chained_hash_insert, chained_hash_search, chained_hash_show
+from app.Part2 import hash_delete_open_addressing, hash_insert_open_addressing, hash_search_open_addressing, hash_show_open_addressing, hash_liner_study, hash_quadratic_study, hash_double_study
 from app.ui_output import int_input, int_input_bigSize, int_exit_input
 
 
@@ -37,7 +37,21 @@ def main():
                 if choice == 1:
                     key = int_input("Enter the key to insert: ")
                     value = int_input("Enter the value to insert: ")
-                    result = chained_hash_insert(hash_table, key, value)
+                    print("\nChoose the collision resolution method:")
+                    print("1. Linear Probing")
+                    print("2. Quadratic Probing")
+                    print("3. Double Hashing")
+                    method_choice = int_input("\nPlease enter your choice (1-3): ")
+                    if method_choice is None:
+                        continue
+                    if method_choice == 1:
+                        study_method  = hash_liner_study
+                    elif method_choice == 2:
+                        study_method  = hash_quadratic_study
+                    elif method_choice == 3:
+                        study_method  = hash_double_study
+                    
+                    result = chained_hash_insert(hash_table, key, value, study_method)
                     print(result)
                     input("\nPress Enter to continue...")
                 elif choice == 2:

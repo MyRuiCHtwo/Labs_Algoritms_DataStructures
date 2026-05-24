@@ -75,7 +75,14 @@ def chained_hash_show(hash_table):
         while cur:
             chain.append(f"{cur.key}: {cur.value}")
             cur = cur.next
-        result.append(f"Index {i}: " + " -> ".join(chain) if chain else f"Index {i}: None")
+
+        if chain:
+            chain_str = " -> ".join(chain) + " -> None"
+        else:
+            chain_str = "None"
+
+        result.append(f"Index {i}: {chain_str}")
+        
     return "\n".join(result)
 
 
