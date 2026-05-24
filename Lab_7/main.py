@@ -8,7 +8,7 @@ def main():
         print("================ Welcome to the Hash Table Program! ===========================")
         print("\nPlease, first chose the type of hash table you want to use: ")
         print("   1. Chained Hash Table")
-        print("   2. Open Addressing Hash Table (Not implemented yet)")
+        print("   2. Open Addressing Hash Table")
         print("   0. Exit")
 
         t_choice = int_exit_input("\nPlease enter your choice (1-2): ")

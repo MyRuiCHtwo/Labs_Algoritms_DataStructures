@@ -14,7 +14,7 @@ def hash_function_multiplication(key, size):
     return int(size * ((hash(key) * A) % 1))
 
 
-def chained_hash_insert_optimized(hash_table, key, value):
+def chained_hash_insert(hash_table, key, value):
     index = hash_function_division(key, len(hash_table))
        
     cur = hash_table[index]
